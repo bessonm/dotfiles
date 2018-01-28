@@ -355,6 +355,11 @@
     <!-- 173 XF86AudioPrev
     172 XF86AudioPlay
     171 XF86AudioNext -->
+    <keybind key="XF86Search">
+      <action name="Execute">
+        <command>firefox --private-window www.google.com</command>
+      </action>
+    </keybind>
     <keybind key="XF86MonBrightnessDown">
       <action name="Execute">
         <command>xbacklight -5</command>
