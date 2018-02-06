@@ -7,7 +7,6 @@
     <strength>10</strength>
     <screen_edge_strength>20</screen_edge_strength>
   </resistance>
-
   <!-- FOCUS -->
   <focus>
     <focusNew>yes</focusNew>
@@ -27,7 +26,6 @@
     <!-- when followMouse is enabled, and a window is given focus by moving the
        mouse into it, also raise the window -->
   </focus>
-
   <!-- PLACEMENT -->
   <placement>
     <policy>Smart</policy>
@@ -46,10 +44,9 @@
        following: 'Mouse' - where the mouse is, or
                   'Active' - where the active window is -->
   </placement>
-
   <!-- THEME -->
   <theme>
-    <name>Clearlooks</name>
+    <name>Onyx</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -100,7 +97,6 @@
       <slant>normal</slant>
     </font>
   </theme>
-
   <!-- DESKTOP -->
   <desktops>
     <number>4</number>
@@ -110,7 +106,6 @@
     </names>
     <popupTime>875</popupTime>
   </desktops>
-
   <!-- RESIZE -->
   <resize>
     <drawContents>yes</drawContents>
@@ -121,7 +116,6 @@
       <y>10</y>
     </popupFixedPosition>
   </resize>
-
   <!-- MARGINS -->
   <margins>
     <top>0</top>
@@ -129,7 +123,6 @@
     <left>0</left>
     <right>0</right>
   </margins>
-
   <!-- DOCK -->
   <dock>
     <position>TopLeft</position>
@@ -143,12 +136,9 @@
     <showDelay>300</showDelay>
     <moveButton>Middle</moveButton>
   </dock>
-
   <!-- KEBOARD -->
   <keyboard>
-
     <chainQuitKey>C-g</chainQuitKey>
-
     <!-- SHOW / HIDE -->
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
@@ -156,18 +146,15 @@
     <keybind key="W-Down">
       <action name="ToggleShade"/>
     </keybind>
-
     <!-- CLOSE WINDOW -->
     <keybind key="A-F4">
       <action name="Close"/>
     </keybind>
-
     <!-- RESIZE -->
     <keybind key="W-Up">
       <action name="Unshade"/>
       <action name="ToggleMaximize"/>
     </keybind>
-
     <!-- SNAP -->
     <keybind key="W-Left">
       <action name="Unmaximize"/>
@@ -189,7 +176,6 @@
         <y>0%</y>
       </action>
     </keybind>
-
     <!-- QUARTER SNAP -->
     <keybind key="W-S-Up">
       <action name="Unmaximize"/>
@@ -235,7 +221,6 @@
         <direction>west</direction>
       </action>
     </keybind>
-
     <!-- SWITCH WINDOW -->
     <keybind key="W-A-Right">
       <action name="DirectionalCycleWindows">
@@ -257,7 +242,6 @@
         <direction>down</direction>
       </action>
     </keybind>
-
     <keybind key="A-Tab">
       <action name="NextWindow">
         <finalactions>
@@ -267,13 +251,11 @@
         </finalactions>
       </action>
     </keybind>
-
     <keybind key="A-Escape">
       <action name="Lower"/>
       <action name="FocusToBottom"/>
       <action name="Unfocus"/>
     </keybind>
-
     <!-- SWITCH DESKTOP -->
     <keybind key="C-A-Left">
       <action name="GoToDesktop">
@@ -287,7 +269,6 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-
     <!-- GOTO DESKTOP -->
     <keybind key="W-F1">
       <action name="GoToDesktop">
@@ -309,7 +290,6 @@
         <to>4</to>
       </action>
     </keybind>
-
     <!-- MOVE WINDOW TO DESKTOP -->
     <keybind key="S-A-Left">
       <action name="SendToDesktop">
@@ -335,7 +315,6 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-
     <!-- FUNCTION KEYS -->
     <keybind key="XF86AudioMute">
       <action name="Execute">
@@ -366,13 +345,11 @@
       </action>
     </keybind>
     <keybind key="XF86MonBrightnessUp">
-       <action name="Execute">
-         <command>xbacklight +5</command>
-       </action>
-     </keybind>
-
+      <action name="Execute">
+        <command>xbacklight +5</command>
+      </action>
+    </keybind>
   </keyboard>
-
   <!-- MOUSE -->
   <mouse>
     <dragThreshold>1</dragThreshold>
@@ -708,7 +685,6 @@
       </mousebind>
     </context>
   </mouse>
-
   <!-- MENU -->
   <menu>
     <!-- You can specify more than one menu file in here and they are all loaded,
@@ -735,7 +711,6 @@
     <manageDesktops>yes</manageDesktops>
     <!-- show the manage desktops section in the client-list-(combined-)menu -->
   </menu>
-
   <!-- APPLICATIONS -->
   <applications>
     <!--
@@ -833,5 +808,4 @@
   # end of the example
 -->
   </applications>
-
 </openbox_config>
