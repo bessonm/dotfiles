@@ -46,7 +46,7 @@
   </placement>
   <!-- THEME -->
   <theme>
-    <name>Onyx</name>
+    <name>Adapta-Nokto</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -331,9 +331,21 @@
         <command>amixer set Master 10%+</command>
       </action>
     </keybind>
-    <!-- 173 XF86AudioPrev
-    172 XF86AudioPlay
-    171 XF86AudioNext -->
+    <keybind key="XF86AudioPrev">
+      <action name="Execute">
+        <command>mpc prev</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioPlay">
+      <action name="Execute">
+        <command>mpc toggle</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioNext">
+      <action name="Execute">
+        <command>mpc next</command>
+      </action>
+    </keybind>
     <keybind key="XF86Search">
       <action name="Execute">
         <command>firefox --private-window www.google.com</command>
