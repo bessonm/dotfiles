@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Ncmpcpp
+Comment=Play Music with ncmpcpp
+Exec=ncmpcpp
+Icon=utilities-terminal
+Terminal=true
+Type=Application
+Keywords=music, music player
+Categories=Application, Audio, Player, Music;
