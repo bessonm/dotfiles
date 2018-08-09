@@ -25,19 +25,9 @@
 		</item>
 	</menu>
 	<menu id="system-menu" label="System">
-		<item label="Hyper">
+		<item label="Termite">
 			<action name="Execute">
-				<execute>hyper</execute>
-			</action>
-		</item>
-		<item label="Pantheon">
-			<action name="Execute">
-				<execute>pantheon-terminal</execute>
-			</action>
-		</item>
-		<item label="Alacritty">
-			<action name="Execute">
-				<execute>alacritty</execute>
+				<execute>termite</execute>
 			</action>
 		</item>
 		<item label="Openbox Configuration Manager">
@@ -59,9 +49,9 @@
 		</item>
 	</menu>
 	<menu id="root-menu" label="Openbox 3">
-		<item label="urxvt">
+		<item label="Termite">
 			<action name="Execute">
-				<execute>urxvt</execute>
+				<execute>termite</execute>
 			</action>
 		</item>
 		<item label="Firefox">
