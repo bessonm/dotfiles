@@ -1,1 +1,17 @@
 .config.git
+Videos
+source
+Music
+Images
+Downloads
+Documents
+Desktop
+.npm
+.ssh
+.mozilla
+.m2
+.gradle
+.local
+.elm
+.cache
+.atom/compile-cache
