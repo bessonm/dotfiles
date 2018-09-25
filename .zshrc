@@ -1,12 +1,9 @@
-# Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt appendhistory autocd notify
 unsetopt beep
 bindkey -e
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
 zstyle :compinstall filename '/home/bessonm/.zshrc'
 
 autoload -Uz compinit
@@ -25,3 +22,15 @@ fi
 if [[ "$SSH_AGENT_PID" == "" ]]; then
     eval "$(<~/.current_ssh_agent)" > /dev/null
 fi
+
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+#bindkey '^[[A' up-line-or-beginning-search # Up
+#bindkey '^[[B' down-line-or-beginning-search # Down
+bindkey "$terminfo[kcuu1]" up-line-or-beginning-search
+bindkey "$terminfo[kcud1]" down-line-or-beginning-search
+
+bindkey '^[[1;5C' forward-word  # [Ctrl-Right]
+bindkey '^[[1;5D' backward-word # [Ctrl-Left]
