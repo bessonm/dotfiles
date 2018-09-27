@@ -1,0 +1,19 @@
+#caarlos0/zsh-open-github-pr
+#robbyrussell/oh-my-zsh folder:plugins/aws
+
+# alias tips, ex:
+# $ ls -lh
+# Alias tip: ll
+# djui/alias-tips
+
+#zsh-users/zsh-completions
+#zsh-users/zsh-syntax-highlighting
+#zsh-users/zsh-history-substring-search
+#zsh-users/zsh-autosuggestions
+#zsh-users/zaw
+
+# long running cmd notif
+marzocchi/zsh-notify
+
+# themes
+denysdovhan/spaceship-prompt
