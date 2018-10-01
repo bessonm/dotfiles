@@ -1,0 +1,49 @@
+[user]
+  email = besson.mael@gmail.com
+  name = bessonm
+[push]
+  default = simple
+[core]
+  trustctime = false
+  editor = vi
+  fileMode = false
+  autocrlf = input
+[color]
+  ui = true
+[credential]
+  helper = cache --timeout=3600
+[merge]
+  tool = vimdiff
+[mergetool]
+  keeptemporaries = false
+  keepbackups = false
+  prompt = false
+  trustexitcode = false
+[merge "ours"]
+  driver = true
+[alias]
+  last = log -1 --stat
+  cp = cherry-pick
+  co = checkout
+  cl = clone
+  ci = commit
+  st = status -sb
+  fap = fetch --all --prune
+  br = branch
+  unstage = reset HEAD --
+  dc = diff --cached
+  l = log -n 10 --oneline
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
+  glog =  log --graph --oneline --decorate --branches --tags --date-order --full-history
+  lga = log --graph --decorate --date-order --full-history --pretty=format:'%C(yellow)%h%Creset <%C(red)%an%Creset> (%C(green)%ai%Creset)%C(auto)%d%Creset %s' --all
+  lgb = log --graph --decorate --date-order --full-history --pretty=format:'%C(yellow)%h%Creset <%C(red)%an%Creset> (%C(green)%ai%Creset)%C(auto)%d%Creset %s'
+  incoming = ! git fetch --quiet && git log --graph --oneline --date-order --full-history ..@{upstream}
+  outgoing = ! git fetch --quiet && git log --graph --oneline --date-order --full-history @{push}..
+  incoming-all = ! git fetch --quiet && git for-each-ref --format='%(refname:short)' refs/heads | xargs -I {} git log --graph --oneline --decorate --date-order --full-history {}..{}@{upstream}
+  outgoing-all = ! git fetch --quiet && git for-each-ref --format='%(refname:short)' refs/heads | xargs -I {} git log --graph --oneline --decorate --date-order --full-history {}@{push}..{}
+  forget = update-index --assume-unchanged
+  unforget = update-index --no-assume-unchanged
+  forgotten = ! git ls-files -v | grep ^[a-z]
+  vimdiff = difftool --no-prompt --tool=vimdiff
+  prev = checkout HEAD^1
+  next = "!sh -c 'git log --reverse --pretty=%H sample-solution | awk \"/$(git rev-parse HEAD)/{getline;print}\" | xargs git checkout'"
