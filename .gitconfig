@@ -32,7 +32,6 @@
   br = branch
   unstage = reset HEAD --
   dc = diff --cached
-  l = log -n 10 --oneline
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
   glog =  log --graph --oneline --decorate --branches --tags --date-order --full-history
   lga = log --graph --decorate --date-order --full-history --pretty=format:'%C(yellow)%h%Creset <%C(red)%an%Creset> (%C(green)%ai%Creset)%C(auto)%d%Creset %s' --all
@@ -45,5 +44,3 @@
   unforget = update-index --no-assume-unchanged
   forgotten = ! git ls-files -v | grep ^[a-z]
   vimdiff = difftool --no-prompt --tool=vimdiff
-  prev = checkout HEAD^1
-  next = "!sh -c 'git log --reverse --pretty=%H sample-solution | awk \"/$(git rev-parse HEAD)/{getline;print}\" | xargs git checkout'"

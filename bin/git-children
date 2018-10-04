@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# example :
+# list all children of commit cf2eb10 (default is HEAD)
+# git children cf2eb10
+
+commitRef=${1:-HEAD}; set -- $(git rev-list --all --not "$commitRef"^@ --children | grep $(git rev-parse "$commitRef") ); shift; echo $*
