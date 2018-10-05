@@ -1,7 +1,0 @@
-#!/bin/sh
-
-# example :
-# checkout to the 2nd grandchild of HEAD (default is 1st) going to branch_name
-# git next branch_name 2
-
-git rev-list --reverse HEAD..${1} | sed "${2:-1}q;d" | xargs git checkout
