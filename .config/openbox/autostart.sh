@@ -1,3 +1,4 @@
 nitrogen --restore &
-(sleep 1 && tint2) &
+sh ~/.config/polybar/launch.sh &amp;
+#(sleep 1 && tint2) &
 (sleep 1 && albert) &
