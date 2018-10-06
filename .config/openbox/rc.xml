@@ -47,7 +47,7 @@
   <!-- THEME -->
   <theme>
     <name>Adapta-Nokto</name>
-    <titleLayout>NLIMC</titleLayout>
+    <titleLayout></titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -58,7 +58,7 @@
       S: shade (roll up/down)
       D: omnipresent (on all desktops).
   -->
-    <keepBorder>yes</keepBorder>
+    <keepBorder>no</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
       <name>sans</name>
@@ -136,7 +136,7 @@
     <showDelay>300</showDelay>
     <moveButton>Middle</moveButton>
   </dock>
-  <!-- KEBOARD -->
+  <!-- KEYBOARD -->
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
     <!-- SHOW / HIDE -->
@@ -828,5 +828,8 @@
 
   # end of the example
 -->
+    <application class="*">
+      <decor>no</decor>
+    </application>
   </applications>
 </openbox_config>
