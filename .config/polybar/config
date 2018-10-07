@@ -1,3 +1,25 @@
+;100% - FF
+;95% - F2
+;90% - E6
+;85% - D9
+;80% - CC
+;75% - BF
+;70% - B3
+;65% - A6
+;60% - 99
+;55% - 8C
+;50% - 80
+;45% - 73
+;40% - 66
+;35% - 59
+;30% - 4D
+;25% - 40
+;20% - 33
+;15% - 26
+;10% - 1A
+;5% - 0D
+;0% - 00
+
 [bar/rebecca]
 
 ;------------;
@@ -20,6 +42,8 @@ border-left-size = 0
 
 bottom = false
 monitor = eDP-1
+monitor-fallback = HDMI1
+
 ;wm-restack = none
 override-redirect = false
 
@@ -35,8 +59,8 @@ font-2 = Font Awesome 5 Brands:size=13;3
 ; COLORS ;
 ;--------;
 
-background = #D9292a44
-foreground = #a0a0c5
+background = #80292a44
+foreground = #BFa0a0c5
 border-color = 0
 
 ;---------------;
@@ -118,7 +142,7 @@ interface = wlp2s0
 interval = 5
 
 label-connected =  %essid%
-label-disconnected =  Not Connected
+label-disconnected = 
 
 [module/cpu]
 type = internal/cpu
