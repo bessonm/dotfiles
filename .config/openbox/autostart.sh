@@ -1,3 +1,5 @@
+compton &
+
 # Wallpaper
 ~/.fehbg &
 

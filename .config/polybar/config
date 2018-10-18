@@ -41,8 +41,7 @@ border-left-size = 0
 ;----------;
 
 bottom = false
-monitor = eDP-1
-monitor-fallback = HDMI1
+monitor = VGA-1
 
 ;wm-restack = none
 override-redirect = false
