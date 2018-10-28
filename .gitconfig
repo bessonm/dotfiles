@@ -5,7 +5,7 @@
   default = simple
 [core]
   trustctime = false
-  editor = vi
+  editor = nano
   fileMode = false
   autocrlf = input
 [color]
