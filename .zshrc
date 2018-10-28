@@ -69,3 +69,17 @@ alias config='/var/run/current-system/sw/bin/git --git-dir=$HOME/.config.git/ --
 
 # antibody plugins
 source ~/.zsh_plugins.sh
+
+# PyWal Colors
+
+## For Polybar transparency w/ pywal
+## @see https://github.com/dylanaraps/pywal/issues/132
+# source ~/.cache/wal/colors.sh
+
+## Export envar with alpha set.
+# export background_alpha="#80${color0/'#'}"
+# export foreground_alpha="#BF${color7/'#'}"
+
+## Terminal colors
+# (cat ~/.cache/wal/sequences &)
+
