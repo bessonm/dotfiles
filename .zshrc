@@ -70,6 +70,9 @@ alias config='/var/run/current-system/sw/bin/git --git-dir=$HOME/.config.git/ --
 # antibody plugins
 source ~/.zsh_plugins.sh
 
+# Disable Software Flow Control (XON/XOFF)
+stty -ixon
+
 # PyWal Colors
 
 ## For Polybar transparency w/ pywal
