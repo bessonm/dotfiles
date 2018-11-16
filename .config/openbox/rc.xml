@@ -55,7 +55,7 @@
 
   <theme>
     <name>Adapta-Nokto</name>
-    <titleLayout></titleLayout>
+    <titleLayout>LMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -875,6 +875,9 @@
 
     <application class="*">
       <decor>no</decor>
+    </application>
+    <application class="Firefox*">
+      <decor>yes</decor>
     </application>
   </applications>
 
