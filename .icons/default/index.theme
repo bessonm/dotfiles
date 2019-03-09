@@ -1,2 +1,4 @@
 [icon theme]
-Inherits=Numix
+#Inherits=Numix
+Inherits=bridge
+#Inherits=nmx
