@@ -41,7 +41,7 @@ border-left-size = 0
 ;----------;
 
 bottom = false
-monitor = VGA-1
+monitor = VGA-2
 
 ;wm-restack = none
 override-redirect = false
