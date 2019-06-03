@@ -1,6 +1,6 @@
 unsetopt beep
 bindkey -e
-zstyle :compinstall filename '/home/bessonm/.zshrc'
+zstyle :compinstall filename '/home/$USER/.zshrc'
 
 # history
 HISTFILE=~/.histfile
