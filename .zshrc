@@ -66,7 +66,7 @@ bindkey '^[[1;5D' backward-word # [Ctrl-Left]
 
 # aliases
 alias config='/var/run/current-system/sw/bin/git --git-dir=$HOME/.config.git/ --work-tree=$HOME'
-alias idea='$HOME/opt/idea-IU-183.4284.148/bin/idea.sh&'
+alias idea='$HOME/opt/idea/bin/idea.sh&'
 
 # antibody plugins
 source ~/.zsh_plugins.sh
