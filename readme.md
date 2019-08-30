@@ -3,7 +3,8 @@
 * rm -r $HOME/DELETE-ME-RIGHT-AFTER
 * alias config='/var/run/current-system/sw/bin/git --git-dir=$HOME/.config.git/ --work-tree=$HOME'
 * config config --local status.showUntrackedFiles no
-* config checkout
+* config checkout -- .
+* antibody bundle < ~/.zsh_plugins > ~/.zsh_plugins.sh
 
 # How to setup a new home
 git clone --bare https://github.com/bessonm/dotfiles.git $HOME/.config.git
