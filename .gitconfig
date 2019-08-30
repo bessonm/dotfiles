@@ -44,5 +44,7 @@
   unforget = update-index --no-assume-unchanged
   forgotten = ! git ls-files -v | grep ^[a-z]
   vimdiff = difftool --no-prompt --tool=vimdiff
+  ll = ls-files -f
+  ls = ls-tree --name-only HEAD
 [rerere]
   enabled = true
