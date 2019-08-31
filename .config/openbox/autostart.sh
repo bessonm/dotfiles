@@ -11,3 +11,4 @@ sh ~/.config/polybar/launch.sh &amp;
 
 # Theme
 (sleep 1 && wal -R -n -e)
+(sleep 1 && xbanish) &
