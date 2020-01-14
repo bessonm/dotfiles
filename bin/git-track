@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+git branch --set-upstream-to ${1:-origin}/${2:-$(git rev-parse --abbrev-ref HEAD)}

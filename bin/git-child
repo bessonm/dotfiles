@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # example :
 # list 5 children of HEAD going to branch_name

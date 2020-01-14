@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # example :
 # list all children of commit cf2eb10 (default is HEAD)

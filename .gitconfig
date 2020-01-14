@@ -46,5 +46,8 @@
   vimdiff = difftool --no-prompt --tool=vimdiff
   ll = ls-files -f
   ls = ls-tree --name-only HEAD
+	sw = switch
+	rs = restore
+	swc = switch -c
 [rerere]
   enabled = true
