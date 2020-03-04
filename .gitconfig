@@ -1,6 +1,7 @@
 [user]
   email = besson.mael@gmail.com
   name = bessonm
+  signingkey = 296FEF1F6C41198F
 [push]
   default = simple
 [core]
@@ -49,6 +50,7 @@
   sw = switch
   rs = restore
   swc = switch -c
+  resign = ! git rebase --exec 'git commit --amend --no-edit -n -S' -i $1
 [rerere]
   enabled = true
 [commit]
