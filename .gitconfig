@@ -50,7 +50,7 @@
   sw = switch
   rs = restore
   swc = switch -c
-  resign = ! git rebase --exec 'git commit --amend --no-edit -n -S' -i $1
+  resign = "!re() { git rebase --exec 'git commit --amend --no-edit -n -S' -i $1; }; re"
 [rerere]
   enabled = true
 [commit]
