@@ -4,7 +4,7 @@ compton &
 ~/.fehbg &
 
 # Bars
-sh ~/.config/polybar/launch.sh &amp;
+sh ~/.config/polybar/launch.sh &
 
 # Launcher
 (sleep 1 && albert) &
