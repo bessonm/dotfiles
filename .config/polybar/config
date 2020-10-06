@@ -42,7 +42,7 @@ border-left-size = 0
 
 bottom = false
 monitor = VGA-1
-monitor-fallback = HDMI1
+monitor-fallback = VGA-2
 
 ;wm-restack = none
 override-redirect = false
