@@ -87,7 +87,6 @@ trap "pidremove" EXIT
 # Enumerate all the attached screens
 displays=""
 while read id; do
-	echo "Reading display $id" >> /home/bessonm/log/screen.log
     displays="$displays $id"
 done< <(ls /tmp/.X11-unix/ | sed -n 's/^X\([0-9]\+\)$/\1/p')
 
@@ -106,11 +105,9 @@ elif [ -e "/usr/bin/xdotool" ]; then
     screensaver="xdofallback"
 else
     screensaver=""
-    echo "no screensaver found. Going with xset reset" >> 
 fi
 
 checkFullscreen() {
-	echo "Checking fullscreen" >> /home/bessonm/log/screen.log
     # loop through every display looking for a fullscreen window
     for display in $displays; do
         # get id of active window and clean output
@@ -121,7 +118,6 @@ checkFullscreen() {
         top_win_id=`DISPLAY=$realdisp.${display} xprop -root _NET_CLIENT_LIST_STACKING`
         top_win_id=${active_win_id##*, }
         top_win_id=${top_win_id:0:9} # eliminate potentially trailing spaces
-
 
         # Check if Active Window (the foremost window) is in fullscreen state
         if [ ${#active_win_id} -ge 3 ]; then
@@ -142,7 +138,6 @@ checkFullscreen() {
         fi
 
         if [[ "$isActiveWinFullscreen" = *NET_WM_STATE_FULLSCREEN* ]] || [[ "$isTopWinFullscreen" = *NET_WM_STATE_FULLSCREEN* ]]; then
-        	echo "Passing in 1" >> /home/bessonm/log/screen.log
             isAppRunning && delayScreensaver
         fi
 
@@ -150,7 +145,6 @@ checkFullscreen() {
         # Detecting by name is used for multiple monitors where the video might be playing, but
         # not in focus.
         if [[ "$isNamedFullscreen" = *NET_WM_STATE_FULLSCREEN* ]]; then
-        	echo "Passing in 2" >> /home/bessonm/log/screen.log
             checkAudioPlaying && delayScreensaver
         fi
     done
@@ -173,7 +167,6 @@ isAppRunning() {
         [ "$html5_detection" = 1 ] && [ `pgrep -c chrome` -ge 1 ] && checkAudio "chrom" && return 0
         ;;
     *[Ff]irefox*)
-	    echo "Found firefox is running" >> /home/bessonm/log/screen.log
         [ "$html5_detection" = 1 ] && [ `pgrep -fc firefox` -ge 1 ] && checkAudio "firefox" && return 0
         ;;
     *opera*)
@@ -251,7 +244,6 @@ delayScreensaver() {
     "freedesktop-screensaver" )
         dbus-send --session --reply-timeout=2000 --type=method_call --dest=org.freedesktop.ScreenSaver /ScreenSaver org.freedesktop.ScreenSaver.SimulateUserActivity;;
     "" )
-	    echo "Reset xset" >> /home/bessonm/log/screen.log
         xset s reset;;
     esac
 
@@ -329,9 +321,7 @@ done
 
 # Convert delay to seconds. We substract 10 for assurance.
 delay=$[delay*60-10]
-echo "Start lightson+ mainloop" >> /home/bessonm/log/screen.log
 while true; do
-	echo "looping" >> /home/bessonm/log/screen.log
     [ -f "$inhibitfile" ] && delayScreensaver || checkFullscreen
     sleep $delay
 done
