@@ -65,10 +65,6 @@ fi
 bindkey '^[[1;5C' forward-word  # [Ctrl-Right]
 bindkey '^[[1;5D' backward-word # [Ctrl-Left]
 
-# aliases
-alias config='/var/run/current-system/sw/bin/git --git-dir=$HOME/.config.git/ --work-tree=$HOME'
-alias idea='$HOME/opt/idea/bin/idea.sh&'
-
 # antibody plugins
 source ~/.zsh_plugins.sh
 
@@ -88,3 +84,38 @@ stty -ixon
 ## Terminal colors
 # (cat ~/.cache/wal/sequences &)
 
+# Add user bin to path
+export PATH=~/"bin:${PATH}"
+
+# Aliases
+alias config='/var/run/current-system/sw/bin/git --git-dir=$HOME/.config.git/ --work-tree=$HOME'
+
+# Function
+
+# batch unzip and move files
+autoload zmv
+zmodload zsh/files
+mkmv() {
+  if [[ $argv[-1]:h = [a-zA-Z] ]]
+    then dir=$argv[-1]:h;
+    else dir='#';
+  fi
+  mkdir -p -- $dir && mv $argv[2] $dir/$argv[2];
+}
+
+batchmove() {zmv -Qp mkmv "(?)*.$1(^-/)" '${(U)1}/$f'}
+
+# zmv a function to safely batch-rename files using zsh powerful pattern matching and expansion operators as an autoloadable function.
+# mkmv: a function that acts like mv except that it also creates the parent directory of the target if need be.
+# $argv[-1]: $argv like $* is the list of positional parameters, $argv[-1] is the last one. Here, same as $3 as zmv calls it as mkmv -- source destination
+# $var:h: like in csh, gets the head of the variable, that is the dir name.
+# zmodload zsh/files: loads a module that enables the builtin version of a few file handling utilities including mkdir and mv, here giving a significative performance enhancement as we're calling both for each file.
+# -Q: enable bare glob qualifiers in the pattern. Theses days, another option is to rewrite (^-/) as (#q^-/).
+# -p mkmv, tell zmv to use our mkmv function as the program to do the renaming instead of mv
+# (?)*(^-/): a pattern (?)* with a glob qualifier used to match the files to rename. The ? (to match a single character) in parenthesis is captured so it can be referred to as $1 in the replacement.
+# (^-/): glob qualifiers used to match files based on more criteria than just their name:
+#     ^: negate the following qualifiers
+#     -: for the following qualifiers, for symlinks, consider the attribute of the target of the link instead of the link itself.
+#     /: select files of type directory. With the previous two qualifiers, that means we want files that are neither directories nor symlinks to directories.
+# ${(U)1}: the captured first character of the matched file, converted to uppercase with the U parameter expansion flag
+# $f in the replacement refers to the full path of the matched file.
