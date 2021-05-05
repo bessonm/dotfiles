@@ -5,6 +5,7 @@ compton &
 
 # Bars
 sh ~/.config/polybar/launch.sh &amp;
+(sleep 1 && conky -b -c ~/.config/conky/conky.conf) &
 
 # Launcher
 (sleep 1 && albert) &
