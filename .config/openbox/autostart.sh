@@ -14,4 +14,4 @@ sh ~/.config/polybar/launch.sh &
 (sleep 1 && xbanish) &
 
 # Disable screensaver on fullscreen
-(sleep 1 && ./lightson+ -d 2) &
+(sleep 1 && ~/bin/lightsonplus/lightson+ -d 8) &
