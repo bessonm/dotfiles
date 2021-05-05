@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-git log -n ${1:-10} --pretty=format:'%C(cyan)%G? %Creset%Cred<%an>%Creset %C(auto)%h%d %s%Creset'
+git log -n ${1:-10} --pretty=format:'%C(cyan)%G? %C(auto)%h%d %s%Creset %Cred<%an>%Creset'
