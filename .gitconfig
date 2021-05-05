@@ -1,7 +1,7 @@
 [user]
   email = besson.mael@gmail.com
   name = bessonm
-  signingkey = 296FEF1F6C41198F
+  signingkey = 82E4111792A91590
 [push]
   default = simple
 [core]
@@ -30,7 +30,7 @@
   ci = commit
   st = status -sb
   fap = fetch --all --prune
-  br = branch
+  br = branch -vv
   unstage = reset HEAD --
   dc = diff --cached
   l = "!f() { git log -n ${1-10} --pretty=format:'%C(cyan)%G?%Creset %C(auto)%h%d %s%Creset %Cred<%an>%Creset'; }; f"
@@ -53,7 +53,7 @@
   swc = switch -c
   resign = "!f() { git rebase --exec 'git commit --amend --no-edit -n -S' -i $1; }; f"
   pr = "!f() { git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
-  track = "!f() { git branch --set-upstream-to ${1-origin}/${2-$(git rev-parse --abbrev-ref HEAD)}%; }; f"
+  track = "!f() { git branch --set-upstream-to ${1-origin}/${2-$(git rev-parse --abbrev-ref HEAD)}; }; f"
 [rerere]
   enabled = true
 [commit]
