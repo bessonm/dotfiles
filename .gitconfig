@@ -51,9 +51,12 @@
   rs = restore
   swc = switch -c
   resign = "!re() { git rebase --exec 'git commit --amend --no-edit -n -S' -i $1; }; re"
+  pr = "!f() { git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+  track = "!f() { git branch --set-upstream-to ${1-origin}/${2-$(git rev-parse --abbrev-ref HEAD)}%; }; f"
+  stale = "!f() { for branch in $(git for-each-ref --format='%(if:equals=[gone])%(upstream:track)%(then)%(refname:short)%(end)' refs/heads); do git branch -D $branch; done }; f"
 [rerere]
   enabled = true
 [commit]
-  gpgsign = true
+  gpgsign = false
 [tag]
   forceSignAnnotated = true
