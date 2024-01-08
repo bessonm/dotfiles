@@ -72,7 +72,7 @@ alias unred='pkill -USR1 redshift'
 alias publicip='dig +short myip.opendns.com @resolver1.opendns.com -4'
 
 # git aliases
-export PATH=~/"bin:${PATH}"
+export PATH="$PATH":~/bin
 
 # antibody plugins
 source ~/.zsh_plugins.sh
